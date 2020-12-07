@@ -230,33 +230,6 @@ minY
             canvas.draw(new Line2D.Double(shiftPoint(center, -8, 8), shiftPoint(center, 8, -8)));
             Point2D.Double corner = shiftPoint(center, 3, 3);
         }
-// Шаг 1 - Установить специальное перо для черчения контуров маркеров
-
-        /*canvas.setStroke(markerStroke);
-// Выбрать красный цвета для контуров маркеров
-        canvas.setColor(Color.RED);
-// Выбрать красный цвет для закрашивания маркеров внутри
-        canvas.setPaint(Color.RED);
-// Шаг 2 - Организовать цикл по всем точкам графика
-        for (Double[] point: graphicsData) {
-// Инициализировать эллипс как объект для представления маркера
-            Ellipse2D.Double marker1 = new Ellipse2D.Double();
-// Эллипс будет задаваться посредством указания координат его центра и угла прямоугольника, в который он вписан //
-// Центр - в точке (x,y)
-            Point2D.Double center1 = xyToPoint(point[0], point[1]);
-// Угол прямоугольника - отстоит на расстоянии (3,3)
-            Point2D.Double corner1 = shiftPoint(center1, 3, 9);
-// Задать эллипс по центру и диагонали
-            marker1.setFrameFromCenter(center1, corner1);
-            canvas.draw(marker1); // Начертить контур маркера
-            //canvas.fill(marker1); // Залить внутреннюю область маркера
-            Ellipse2D.Double marker2 = new Ellipse2D.Double();
-            Point2D.Double center2 = xyToPoint(point[0], point[1]);
-            Point2D.Double corner2 = shiftPoint(center2, 9, 3);
-            marker2.setFrameFromCenter(center2, corner2);
-            canvas.draw(marker2);
-            //canvas.fill(marker2);
-        }*/
 
     }
     // Метод, обеспечивающий отображение осей координат
@@ -359,14 +332,6 @@ minY
 
         }
     }
-
-    /* Метод-помощник, осуществляющий преобразование координат.
-    * Оно необходимо, т.к. верхнему левому углу холста с координатами
-    * (0.0, 0.0) соответствует точка графика с координатами (minX, maxY),
-    где
-    * minX - это самое "левое" значение X, а
-    * maxY - самое "верхнее" значение Y.
-    */
     protected Point2D.Double xyToPoint(double x, double y) {
 // Вычисляем смещение X от самой левой точки (minX)
         double deltaX = x - minX;
